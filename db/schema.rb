@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118083355) do
+ActiveRecord::Schema.define(version: 20171118085229) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,10 +23,23 @@ ActiveRecord::Schema.define(version: 20171118083355) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birthdate"
+    t.string "address"
+    t.string "phone_number"
+    t.string "sex"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "father_id"
+    t.integer "mother_id"
+    t.integer "siblings_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["father_id"], name: "index_users_on_father_id"
+    t.index ["mother_id"], name: "index_users_on_mother_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["siblings_id"], name: "index_users_on_siblings_id"
   end
 
 end
