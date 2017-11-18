@@ -29,6 +29,8 @@ gem 'slim'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'jquery-rails'
 gem 'bootstrap-will_paginate'
+gem 'faker', '~> 1.8', '>= 1.8.4'
+gem 'devise'
 
 group :production do
   gem 'pg'
