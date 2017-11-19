@@ -98,4 +98,16 @@ User.create(id: 7,
 			mother_id: nil,
 			siblings_id: 5)
 
+20.times do 
+	User.create(email: Faker::Internet.email,
+				password: '1111111',
+				first_name: Faker::Name.name,
+				last_name: Faker::Name.name,
+				sex: 'male',
+				birthdate: Faker::Date.between(1000.days.ago, Date.today),
+				address: Faker::Address.city,
+				phone_number:  Faker::Number.number(9)
+				)
+end
+
 p "Seeds added correctly"

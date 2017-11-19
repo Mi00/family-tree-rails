@@ -1,0 +1,44 @@
+.row
+	.col-md-12
+		= form_for(user) do |f|
+			.row
+				.col-md-12
+					- if user.errors.any?
+						.error_explanation style='color: red'
+							h2
+								- pluralize(user.errors.count, "error") 
+								| user can't be saved:
+							ul
+								- user.errors.full_messages.each do |message|
+									li 
+										= message
+								
+			.row
+				.col-md-12
+					p
+						.row
+							= f.label "#{t('first_name')}", class: 'col-md-2'
+							= f.text_field :first_name, class: 'col-md-8'
+					p
+						.row
+							= f.label "#{t('last_name')}", class: 'col-md-2'
+							= f.text_field :last_name, class: 'col-md-8'
+					p
+						.row
+							= f.label "#{t('sex')}", class: 'col-md-2'
+							= f.text_field :sex, class: 'col-md-8'
+					p
+						.row
+							= f.label "#{t('birthdate')}", class: 'col-md-2'
+							= f.text_field :birthdate, class: 'col-md-8'
+					p
+						.row
+							= f.label "#{t('address')}", class: 'col-md-2'
+							= f.text_field :address, class: 'col-md-8'
+					p
+						.row
+							= f.label "#{t('phone_number')}", class: 'col-md-2'
+							= f.text_field :phone_number, class: 'col-md-8'
+			.row
+				.col-md-12.text-right
+					= f.submit 'Update user', class: 'btn btn-success'

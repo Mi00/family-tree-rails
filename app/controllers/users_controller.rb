@@ -11,6 +11,13 @@ class UsersController < ApplicationController
   		format.json {
   			render json: @users
   		}
+  		format.csv {
+  			send_data @users.to_csv
+  		}
+  		format.pdf do
+  			render pdf: "file", 
+  				   template: "users/index.pdf.erb"
+  		end
   	end
   end
 
@@ -25,6 +32,13 @@ class UsersController < ApplicationController
   		format.json {
   			render json: @user
   		}
+  		format.csv {
+  			send_data @user.to_csv
+  		}
+  		format.pdf do
+  			render pdf: "file", 
+  				   template: "users/show.pdf.erb"
+  		end
   	end
   end
 
@@ -66,4 +80,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit()
     end
+
+    def user_params
+    params.require(:user).permit(:first_name, :last_name, :sex, :birthdate, :address, :phone_number)
+  end
 end

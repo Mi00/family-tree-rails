@@ -11,7 +11,20 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require jquery
+//= require jquery_ujs
+//= require jquery.turbolinks
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require dataTables/jquery.dataTables
 //= require bootstrap-sprockets
+//= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function(){
+		$('#datatable').dataTable({
+			"language": {
+				"url": "https://cdn.datatables.net/plug-ins/1.10.15/i18n/Polish.json"
+			}
+		});
+	});
