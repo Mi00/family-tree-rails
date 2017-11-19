@@ -1,47 +1,33 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-.row
-	.col-md-12
-		h1.text-center = "Details about #{@user.first_name} #{@user.last_name}"
-.row
-	.col-md-6
-		h2.text-center(style="background-color: lightgreen") Mother's first name and last name
-		-if !@user.mother.nil?
-			h2.text-center = link_to "#{@user.mother.first_name} #{@user.mother.last_name}", user_path(@user.mother.id)
-		-else
-			h2.text-center No mother in database
-	.col-md-6
-		h2.text-center(style="background-color: lightgreen") Father's first name and last name
-		-if !@user.father.nil?
-			h2.text-center = link_to "#{@user.father.first_name} #{@user.father.last_name}", user_path(@user.father.id)
-		-else
-			h2.text-center No father in database
-	.col-md-12
-		h2.text-center(style="background-color: lightgreen") Siblings first name and last name
-		-if !@user.siblings.nil?
-			h2.text-center = link_to "#{@user.siblings.first_name} #{@user.siblings.last_name}", user_path(@user.siblings.id)
-		-else
-			h2.text-center No siblings in database
-br
-.row
-	.col-md-8.col-md-offset-2
-		table.table.text-center
-			tr
-				td First name
-				td = @user.first_name
-			tr
-				td Last name
-				td = @user.last_name
-			tr
-				td Birthdate
-				td = @user.birthdate
-			tr
-				td Sex
-				td = @user.sex
-			tr
-				td Address
-				td = @user.address
-			tr
-				td Phone number
-				td = @user.phone_number
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table text-center">
+			<tr>
+				<td><%= t :first_name %></td>
+				<td><%= @user.first_name %></td>
+			</tr>
+			<tr>
+				<td><%= t :last_name %></td>
+				<td><%= @user.last_name %></td>
+			</tr>
+			<tr>
+				<td><%= t :birthdate %></td>
+				<td><%= @user.birthdate %></td>
+			</tr>
+			<tr>
+				<td><%= t :sex %></td>
+				<td><%= @user.sex %></td>
+			</tr>
+			<tr>
+				<td><%= t :address %></td>
+				<td><%= @user.address %></td>
+			</tr>
+			<tr>
+				<td><%= t :phone_number %></td>
+				<td><%= @user.phone_number %></td>
+			</tr>
+		</table>
+	</div>
+</div>
 
 		 	

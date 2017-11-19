@@ -1,25 +1,20 @@
-# README
+Application shows relations between users.
+You can download all or one user as pdf or csv.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample admin user:
+	email: bbbb@wp.pl
+	pass: 111111
 
-Things you may want to cover:
+Sample normal user:
+	email: bbb@wp.pl
+	pass: 111111
 
-* Ruby version
+This app is available online:
+https://family-tree-app-by-michal.herokuapp.com/
 
-* System dependencies
+Ruby ver. 2.4.2
 
-* Configuration
+Before new run you can add some data:
 
-* Database creation
+rails db:seed
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# family-tree-rails

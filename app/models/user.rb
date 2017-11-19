@@ -22,17 +22,4 @@ class User < ApplicationRecord
 		end
 	end
 
-	def self.search(term, term2, page)
-	  if !term.empty? && term2.empty?
-	    where('first_name LIKE ?', "%#{term}%").paginate(page: page, per_page: 10).order(first_name: :ASC, birthdate: :asc)
-	  elsif term.empty? && !term2.empty?
-	  	where('last_name LIKE ?', "%#{term2}%").paginate(page: page, per_page: 10).order(first_name: :ASC, birthdate: :asc)
-	  elsif !term.empty? && !term2.empty?
-	  	where('last_name LIKE ? AND first_name LIKE ?',
-	  			"%#{term2}%", "%#{term}%").paginate(page: page, per_page: 10).order(first_name: :ASC, birthdate: :asc)
-	  else
-	    paginate(page: page, per_page: 10).order(first_name: :ASC, birthdate: :asc)
-	  end
-	end
-
 end

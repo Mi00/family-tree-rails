@@ -35,6 +35,7 @@ gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary'
 gem 'jquery-datatables-rails'
 gem 'jquery-ui-rails'
+gem 'devise-i18n'
 
 group :production do
   gem 'pg'

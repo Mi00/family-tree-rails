@@ -6,12 +6,7 @@
 		= link_to "CSV", users_path(format: :csv), class: 'btn btn-warning'
 	.col-md-6.text-left
 		= link_to "PDF", users_path(format: :pdf), class: 'btn btn-success'
-.row
-	.col-md-12.text-center
-		=form_tag(users_path, method: :get) do
-			= text_field_tag :term, params[:term], placeholder: "#{t('first_name')}"
-			= text_field_tag :term2, params[:term2], placeholder: "#{t('last_name')}"
-			= submit_tag 'Search', name: nil
+br
 .row
 	.col-md-12
 		table#datatable
@@ -23,8 +18,9 @@
 					th = t :address
 					th = t :phone_number
 					th
-					th
-					th
+					-if is_admin?
+						th
+						th
 			tbody
 				- for user in @users
 				 tr

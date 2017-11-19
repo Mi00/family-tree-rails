@@ -1,11 +1,11 @@
 .row
 	.col-md-12
-		h1.text-center Edit user
+		h1.text-center = "#{t('edit')} #{t('users')}"
 .row
 	.col-md-12
 		= render 'form', user: @user
 .row
 	.col-md-4
-		= link_to 'Show', user_path(@user.id)
+		= link_to "#{t('show')}", user_path(@user.id)
 		|	|
-		= link_to 'Back', users_path
+		= link_to "#{t('back')}", users_path
