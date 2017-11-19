@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	root to: 'users#homepage'
 	scope "/:locale", locale: /en|pl/ do
 	  devise_for :users
 	  get 'users/index', to: 'users#index', as: 'users'
