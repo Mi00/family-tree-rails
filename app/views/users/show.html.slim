@@ -1,4 +1,9 @@
 .row
+	.col-md-6.text-right
+		= link_to "CSV", user_path(format: :csv), class: 'btn btn-warning'
+	.col-md-6.text-left
+		= link_to "PDF", user_path(format: :pdf), class: 'btn btn-success'
+.row
 	.col-md-12
 		h1.text-center = "Details about #{@user.first_name} #{@user.last_name}"
 .row
